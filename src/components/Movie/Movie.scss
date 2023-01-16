@@ -1,0 +1,29 @@
+.movie-card {
+  border-radius: 10px !important;
+  overflow: hidden;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border: none !important;
+  transition: 0.2s all;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 70%;
+    scale: 1.05;
+  }
+}
+
+.poster-container {
+    position: relative;
+}
+
+.vote-average--movie {
+    position: absolute;
+    bottom: -20px;
+    right: 10px;
+    border-radius: 50pX;
+    border: rgb(39, 73, 91) solid 2px;
+}
+
+.release-date {
+    color: #7e7e7e;
+}
