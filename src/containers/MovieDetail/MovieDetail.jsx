@@ -10,7 +10,7 @@ export default function MovieDetail() {
    const { id } = useParams();
 
    useEffect(() => {
-      getSingleMovie();
+      getSingleMovie(id);
    }, []);
 
    const getSingleMovie = async (id) => {
@@ -18,7 +18,7 @@ export default function MovieDetail() {
       try {
          const res = await MoviesService.getSingleMovie(id);
          setMovie(res.data.results);
-         console.log("res.data.results", res.data.results);
+         console.log("res.data.results", res.data.data);
       } catch (error) {
          console.log(error.message || error);
       }
@@ -29,7 +29,7 @@ export default function MovieDetail() {
    return (
       <>
          {movie.id && (
-            <div className="detalles">
+            <div className="detalles">dfffffd
                
             </div>
          )}

@@ -1,23 +1,21 @@
-import { useState } from 'react'
-import MoviesList from './containers/MoviesList/MoviesList';
+
+import "./App.scss";
+//containers
+import MoviesList from './containers/MovieList/MovieList';
 import MovieDetail from './containers/MovieDetail/MovieDetail';
 
 //componentes
 import { Header } from './components/Header/Header';
 
 import {
-  createBrowserRouter,
-  RouterProvider,
   Route,
   Routes,
-  Router,
   BrowserRouter,
-  Link,
-  createRoutesFromElements,
   Navigate,
 } from "react-router-dom"
-import {  } from "./containers/MoviesList/MoviesList";
 import About from './containers/About/About';
+import Login from './containers/Login/Login';
+import Admin from './containers/Admin/Admin';
 
 
 
@@ -31,6 +29,8 @@ function App() {
                <Route path="/movies" element={<MoviesList />} />
                <Route path="/movies/:id" element={<MovieDetail />} />
                <Route path="/about" element={<About />} />
+               <Route path='/login' element={<Login/>}/>
+               <Route path='/login' element={<Admin/>}/>
             </Routes>
          </BrowserRouter>
      

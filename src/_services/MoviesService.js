@@ -11,7 +11,9 @@ MoviesService.getAllMovies = async (page = 1) => {
 
 MoviesService.getSingleMovie = async (id) => {
   const apiUrl = `${environment.BASE_API_URL}/movies/${id}`;
-  const res =await axios.get(apiUrl)
+  const res =await axios.get(apiUrl);
 
   return res;
 };
+export default MoviesService;
+
