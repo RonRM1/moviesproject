@@ -32,7 +32,7 @@ function Movie({ movie }) {
 
         <div className="card-body">
           <h5 className="card-title mb-2 mt-2 fs-6 fw-bold">{movie.title}</h5>
-          <div className="release-date">{movie.popularity}</div>
+          <div className="release-date">👁️‍🗨️ {movie.popularity}</div>
         </div>
       </div>
     </div>

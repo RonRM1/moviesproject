@@ -102,7 +102,7 @@ export default function Login() {
                      type="submit"
                      className="btn btn-primary text-white fw-bold"
                   >
-                     Submit
+                     Enviar
                   </button>
                </div>
             </form>

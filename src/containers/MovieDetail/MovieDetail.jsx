@@ -50,16 +50,16 @@ export default function MovieDetail() {
               </div>
               <div className="col-md-8 text-start">
                 <h1 className="h1 fw-bold  mb-3">
-                  {movie.title} <span className="fw-lighter">ron</span>
+                  {movie.title} <span className="fw-lighter"></span>
                 </h1>
-                <div className="mb-4">{`(${movie.original_language.toUpperCase()}) ${
+                <div className="mb-4">{`Lenguaje y fecha: (${movie.original_language.toUpperCase()}) ${
                   movie.release_date
                 }`}</div>
                 <div className="mb-4 vote-average">{movie.vote_average}</div>
                 <h5 className="fw-bold">Descripcion</h5>
                 <p className="fs-5">{movie.overview}</p>
                 <div>{`${"Precio Alquiler: "}${movie.price} $`}</div>
-                {`${"Visualizaciones: "}${movie.vote_count} veces`}
+                {`${"Votada: "}${movie.vote_count} veces`}
                 <div>
                   <div className="mb-4">
                     <button
