@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import AuthService from "../../_services/AuthService";
+import User from "../User/User";
 
 export default function Register() {
-  const [name, setName] = useState("Your name here!");
-  const [email, setEmail] = useState("email");
-  const [password, setPassword] = useState("password");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleChange = (event) => {
     setName(event.target.value);
@@ -17,16 +18,47 @@ export default function Register() {
     setPassword(event.target.value);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("submit register");
+    console.log(name);
+    console.log(email);
+    console.log(password);
+    const user = {
+      name: name,
+      email: email,
+      password: password,
+    };
+    register(user);
+
+    // setFormErrors(validateLoginFormValues(formValues));
+    // console.log("handle", formErrors);
+    // setIsSubmit(true);
+  };
+  const register = async (user) => {
+    try {
+      const res = await AuthService.register(user);
+      console.log(res.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
-    <form>
+    <form noValidate onSubmit={handleSubmit}>
       <div>Nombre</div>
-      <input type="text" value={user.name} onChange={handleChange} />
+      <input
+        type="text"
+        placeholder="nombre"
+        value={name}
+        onChange={handleChange}
+      />
       <div>Email</div>
-      <input type="text" value={email} onChange={handleChang} />
+      <input type="text" placeholder="" value={email} onChange={handleChang} />
       <div>Password</div>
       <input type="text" value={password} onChange={handleChan} />
 
-      <div className="d-grid gap-2">
+      <div className="">
         <button type="submit" className="btn btn-primary text-white fw-bold">
           Enviar
         </button>

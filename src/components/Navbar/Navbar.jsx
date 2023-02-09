@@ -79,6 +79,7 @@ export default function Navbar() {
                 <NavLink to="/register" className={setNavLinkClassName}>
                   Registrarse
                 </NavLink>
+                
               </li>
             </ul>
           </div>
