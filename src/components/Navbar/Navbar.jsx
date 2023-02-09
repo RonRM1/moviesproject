@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+
 import "./Navbar.scss";
 import logo from "../../assets/react.svg";
 
@@ -43,7 +44,7 @@ export default function Navbar() {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <NavLink to="/movies" className={setNavLinkClassName} end>
-                  Movies
+                  Home
                 </NavLink>
               </li>
               <li className="nav-item">
@@ -72,6 +73,11 @@ export default function Navbar() {
               <li className="nav-item">
                 <NavLink to="/login" className={setNavLinkClassName}>
                   Login
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink to="/register" className={setNavLinkClassName}>
+                  Registrarse
                 </NavLink>
               </li>
             </ul>

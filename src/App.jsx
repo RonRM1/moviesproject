@@ -12,6 +12,7 @@ import Login from "./containers/Login/Login";
 import Admin from "./containers/Admin/Admin";
 import RequireAuth from "./components/Auth/RequireAuth";
 import User from "./containers/User/User";
+import Register from "./containers/Register/Register";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="/movies/:id" element={<MovieDetail />} />
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/user" element={<User />} />
         

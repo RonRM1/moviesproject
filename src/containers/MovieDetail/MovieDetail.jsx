@@ -64,7 +64,7 @@ export default function MovieDetail() {
                   <div className="mb-4">
                     <button
                       className="btn btn-success"
-                      //   onClick={() => rentMovie(movie)}
+                        onClick={() => rentMovie(movie)}
                     >
                       Rentar
                     </button>
