@@ -31,9 +31,7 @@ export default function Register() {
     };
     register(user);
 
-    // setFormErrors(validateLoginFormValues(formValues));
-    // console.log("handle", formErrors);
-    // setIsSubmit(true);
+  
   };
   const register = async (user) => {
     try {
@@ -54,9 +52,19 @@ export default function Register() {
         onChange={handleChange}
       />
       <div>Email</div>
-      <input type="text" placeholder="" value={email} onChange={handleChang} />
+      <input
+        type="text"
+        placeholder="email"
+        value={email}
+        onChange={handleChang}
+      />
       <div>Password</div>
-      <input type="text" value={password} onChange={handleChan} />
+      <input
+        type="text"
+        placeholder="password"
+        value={password}
+        onChange={handleChan}
+      />
 
       <div className="">
         <button type="submit" className="btn btn-primary text-white fw-bold">

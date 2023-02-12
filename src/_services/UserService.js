@@ -7,7 +7,6 @@ const UserService = {};
 UserService.getAllUsers = async () => {
   const apiUrl = environment.BASE_API_URL + "/users";
   const token = TokenStorageService.getToken();
-  console.log(token);
 
   const config = {
     headers: { Authorization: `Bearer ${token}` },
@@ -16,12 +15,12 @@ UserService.getAllUsers = async () => {
   return await axios.get(apiUrl, config);
 };
 
-UserService.getMovieRentals = async () => {
+UserService.getMovieRentals = async (id) => {
   const apiUrl = `${environment.BASE_API_URL}/users/${id}/movies`;
   const token = TokenStorageService.getToken();
   const config = {
     headers: { Authorization: `Bearer ${token}` },
   };
-  return await axios.post(apiUrl, config);
+  return await axios.get(apiUrl, config);
 };
 export default UserService;

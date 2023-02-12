@@ -28,7 +28,7 @@ MovieService.getSingleMovie = async (id) => {
   return await axios.get(apiUrl, config);
 };
 
-MovieService.rentMovie = async (id, price) => {
+MovieService.rentMovie = async (id) => {
   const apiUrl = `${environment.BASE_API_URL}/movies/${id}/rent`;
 
   const token = TokenStorageService.getToken();
@@ -37,7 +37,7 @@ MovieService.rentMovie = async (id, price) => {
     headers: { Authorization: `Bearer ${token}` },
   };
 
-  return await axios.post(apiUrl, { price: price }, config);
+  return await axios.post(apiUrl, config);
 };
 
 export default MovieService;

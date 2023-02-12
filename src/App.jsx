@@ -13,6 +13,8 @@ import Admin from "./containers/Admin/Admin";
 import RequireAuth from "./components/Auth/RequireAuth";
 import User from "./containers/User/User";
 import Register from "./containers/Register/Register";
+import Logout from "./containers/Logout/Logout";
+import MovieRent from "./containers/MovieRent/MovieRent";
 
 
 function App() {
@@ -24,9 +26,11 @@ function App() {
           <Route path="/" element={<Navigate to="/movies" />} />
           <Route path="/movies" element={<RequireAuth><MovieList /></RequireAuth>} />
           <Route path="/movies/:id" element={<MovieDetail />} />
+          <Route path="/movies/:id/rent" element={<MovieRent />} />
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/logout" element={<Logout />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/user" element={<User />} />
         

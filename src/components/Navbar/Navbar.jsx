@@ -1,6 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-
+import { Navigate, NavLink } from "react-router-dom";
 
 import "./Navbar.scss";
 import logo from "../../assets/react.svg";
@@ -47,14 +46,26 @@ export default function Navbar() {
                   Home
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Link
-                </a>
-              </li>
+
               <li className="nav-item">
                 <NavLink to="/about" className={setNavLinkClassName}>
                   About
+                </NavLink>
+              </li>
+
+              <li className="nav-item">
+                <NavLink to="/login" className={setNavLinkClassName}>
+                  Login
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink to="/Logout" className={setNavLinkClassName}>
+                  Logout
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink to="/register" className={setNavLinkClassName}>
+                  Registrarse
                 </NavLink>
               </li>
             </ul>
@@ -69,19 +80,7 @@ export default function Navbar() {
                 Search
               </button>
             </form>
-            <ul className="navbar-nav navbar-right  me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <NavLink to="/login" className={setNavLinkClassName}>
-                  Login
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink to="/register" className={setNavLinkClassName}>
-                  Registrarse
-                </NavLink>
-                
-              </li>
-            </ul>
+            <ul className="navbar-nav navbar-right  me-auto mb-2 mb-lg-0"></ul>
           </div>
         </div>
       </nav>

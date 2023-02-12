@@ -29,7 +29,7 @@ export default function UserPanel() {
 
   return (
     <div>
-      <h2>Gestión de; usuarios</h2>
+      <h2>Gestión de usuarios</h2>
 
       <div>
         {users.map((user) => (

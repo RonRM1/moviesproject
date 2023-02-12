@@ -4,6 +4,7 @@ import AuthService from "../../_services/AuthService";
 import TokenStorageService from "../../_services/TokenStorageService";
 import { validateLoginFormValues } from "../../_helpers/form-utilities";
 import "./Login.scss";
+import UserStorageService from "../../_services/UserStorageService";
 
 export default function Login() {
    const initialValues = {
@@ -36,6 +37,7 @@ export default function Login() {
       try {
          const res = await AuthService.login(credentials);
          console.log(res.data);
+         UserStorageService.saveId(res.data.user_id);
          TokenStorageService.saveToken(res.data.token);
          navigate("/admin");
       } catch (error) {

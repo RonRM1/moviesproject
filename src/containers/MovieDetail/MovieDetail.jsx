@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import "./MovieDetail.scss";
 
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import MovieService from "../../_services/MovieService";
 import { environment } from "../../_environmets/environment";
 
@@ -15,7 +15,6 @@ export default function MovieDetail() {
   }, []);
 
   const getSingleMovie = async () => {
-    console.log("hola");
     try {
       const res = await MovieService.getSingleMovie(id);
       setMovie(res.data.results);
@@ -24,6 +23,18 @@ export default function MovieDetail() {
       console.log(error.message || error);
     }
   };
+  const navigate = useNavigate();
+  const rent = (movie) => {
+    navigate(`/movies/${movie._id}/rent`);
+  };
+
+  // const rent = async () => {
+  //   try {
+  //     const res = await MovieService.rentMovie();
+  //   } catch (error) {
+  //     console.log(error.message || error);
+  //   }
+  // };
 
   return (
     <>
@@ -64,7 +75,8 @@ export default function MovieDetail() {
                   <div className="mb-4">
                     <button
                       className="btn btn-success"
-                        onClick={() => rentMovie(movie)}
+                      onClick={() => rent(movie)}
+                      
                     >
                       Rentar
                     </button>
