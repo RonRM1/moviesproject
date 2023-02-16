@@ -2,6 +2,7 @@ import axios from "axios";
 import { environment } from "../_environmets/environment";
 import TokenStorageService from "./TokenStorageService";
 
+
 const MovieService = {};
 
 MovieService.getAllMovies = async (page = 1) => {
@@ -37,7 +38,7 @@ MovieService.rentMovie = async (id) => {
     headers: { Authorization: `Bearer ${token}` },
   };
 
-  return await axios.post(apiUrl, config);
+  return await axios.post(apiUrl, {}, config);
 };
 
 export default MovieService;

@@ -43,13 +43,13 @@ export default function Navbar() {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <NavLink to="/movies" className={setNavLinkClassName} end>
-                  Home
+                  Home / Rentar
                 </NavLink>
               </li>
 
               <li className="nav-item">
-                <NavLink to="/about" className={setNavLinkClassName}>
-                  About
+                <NavLink to="/movies-user" className={setNavLinkClassName}>
+                  Mis Peliculas Rentadas
                 </NavLink>
               </li>
 

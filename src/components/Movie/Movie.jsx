@@ -28,7 +28,7 @@ function Movie({ movie }) {
             {movie.vote_average}
           </div>
         </div>
-        <button onClick={() => getMovieDetails(movie)}>Detalles</button>
+        <button onClick={() => getMovieDetails(movie)}>Detalles / Rentar</button>
 
         <div className="card-body">
           <h5 className="card-title mb-2 mt-2 fs-6 fw-bold">{movie.title}</h5>

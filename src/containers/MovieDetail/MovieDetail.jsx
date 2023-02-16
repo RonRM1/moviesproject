@@ -24,18 +24,17 @@ export default function MovieDetail() {
     }
   };
   const navigate = useNavigate();
-  const rent = (movie) => {
-    navigate(`/movies/${movie._id}/rent`);
+  const rent = async (movie) => {
+    try {
+      console.log(movie);
+      const res = await MovieService.rentMovie(movie._id);
+      navigate(`/movies/${movie._id}/rent`);
+    } catch (error) {
+      console.log(error.message || error);
+    }
   };
 
-  // const rent = async () => {
-  //   try {
-  //     const res = await MovieService.rentMovie();
-  //   } catch (error) {
-  //     console.log(error.message || error);
-  //   }
-  // };
-
+  
   return (
     <>
       {movie.id && (
@@ -76,7 +75,6 @@ export default function MovieDetail() {
                     <button
                       className="btn btn-success"
                       onClick={() => rent(movie)}
-                      
                     >
                       Rentar
                     </button>
